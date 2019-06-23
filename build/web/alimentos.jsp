@@ -26,8 +26,8 @@
         </header>
         
         
-        <form   action="controlador.do" method="post"  >
-            <select name="selector" >
+        <form class="container"  action="controlador.do" method="post"  >
+            <select name="selector" multiple>
                 <option disable selected>--Seleccione una Dieta--</option>
                 <option value ="dieta proteica">dieta proteica</option>
                 <option value ="dieta de harinas">dieta de harinas</option>
