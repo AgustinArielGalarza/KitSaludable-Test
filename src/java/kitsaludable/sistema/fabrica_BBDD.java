@@ -7,9 +7,10 @@ import kitsaludable.componentes.alimentos;
 public class fabrica_BBDD {
     
     private Database db = new Database();
+
     
     public List<alimentos> getAlimentos (String dieta) throws Exception{
-        
+        String laDieta = dieta;
         List<alimentos> alm = new ArrayList<>();
         
         Connection miConexion = null;
@@ -25,7 +26,7 @@ public class fabrica_BBDD {
         sql="select nombre_alimentos,calorias,nombre_dietas"
                           + " from alimentos inner join dietas "
                           + "on alimentos.dietas_id = dietas.id_dietas "
-                          + "where nombre_dietas = '"+ dieta +"' ;";
+                          + "where nombre_dietas = '"+ laDieta +"' ;";
         
         miStatement = miConexion.prepareStatement(sql);
         
