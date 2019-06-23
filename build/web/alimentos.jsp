@@ -37,41 +37,33 @@
             </select>
              <input  name="boton" type="submit" value="Enviar"/>
         </form>
-        <% 
-        %>
-        
-        <%
-        %>
-        
-        <div class ="container">
+            <div class ="container">
             <h3>Lista de alimentos de la dieta seleccionada</h3>
            <table class="table table-striped table-bordered table-hover">
                 <tr class="success">
-                    <th>N°</th>
                     <th>Alimentos</th>
                     <th>Calorias</th>
                     <th>Descripcion</th>
                 </tr>
+        <% 
+            List<alimentos> losAlimentos = null;
+            losAlimentos=(List<alimentos>) request.getAttribute("lista dietas");
+            if(losAlimentos != null){
+                for(alimentos la : losAlimentos){%>
                 <tr>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
+                    
+                    <td><%= la.getNom_alimentos() %></td>
+                    <td><%= la.getCalorias() %></td>
+                    <td><%= la.getNom_dietas() %></td>
+                    
                 </tr>
-                <tr>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                </tr>
-                <tr>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                </tr>
+                <% 
+            }
+            }
+               %>
             </table>
         </div>
+        
         
         
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

@@ -24,7 +24,7 @@ public class controlador extends HttpServlet {
             alimentos_delControlador =  fb.getAlimentos(dieta);
             
             request.setAttribute("lista dietas", alimentos_delControlador);
-            request.getRequestDispatcher("/listas.jsp").forward(request, response);
+            request.getRequestDispatcher("/alimentos.jsp").forward(request, response);
             
         }catch(Exception e){
             e.printStackTrace();
