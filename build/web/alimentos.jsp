@@ -64,6 +64,35 @@
             </table>
         </div>
         
+            <div class="container" action="controlador.do" method="post">
+            <h3 class="container-fluid">Cantidad de calorias</h3>
+                 <select name="select" multiple>
+                     <option value ="" disable selected>--Seleccione una Calorias--</option>
+                     <option value ="100">100</option>
+                     <option value ="200">200</option>
+                     <option value ="300">300</option>
+                     <option value ="400">400</option>
+                     <option value ="500">500</option>
+                 </select>
+                <input  name="boton2" type="submit" value="Enviar"/>
+                 </div>
+
+        
+        <div class ="container">
+            <h3>Lista de alimentos con las calorias determinadas</h3> 
+            <table class="table table-striped table-bordered table-hover">
+                <tr class="success">
+                    <th>Alimentos</th>
+                    <th>Calorias</th>
+                    <th>Descripcion</th>
+                </tr>
+                <tr>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+            </table>
+        </div>
         
         
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
