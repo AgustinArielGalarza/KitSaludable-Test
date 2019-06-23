@@ -15,23 +15,25 @@ public class controlador extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
     
         String dieta= request.getParameter("selector");
-         if(dieta.equals("dieta proteica")){
-             request.getRequestDispatcher("/listas.jsp").forward(request, response);
-         }
-        
-//        fabrica_BBDD fb = new fabrica_BBDD();
-//        List<alimentos> alimentos_delControlador;
-//        try{
-//            alimentos_delControlador =  fb.getAlimentos(dieta);
-//            
-//            request.setAttribute("lista dietas", alimentos_delControlador);
-//            request.getRequestDispatcher("/listas.jsp").forward(request, response);
-//            
-//        }catch(Exception e){
-//            e.printStackTrace();
-//        }
+        String boton=request.getParameter("boton");
+         if(boton != null){
+             
+        fabrica_BBDD fb = new fabrica_BBDD();
+        List<alimentos> alimentos_delControlador;
+        try{
+            alimentos_delControlador =  fb.getAlimentos(dieta);
+            
+            request.setAttribute("lista dietas", alimentos_delControlador);
+            request.getRequestDispatcher("/listas.jsp").forward(request, response);
+            
+        }catch(Exception e){
+            e.printStackTrace();
+        }
         
     
+         }
+        
+        
     
     }
     
