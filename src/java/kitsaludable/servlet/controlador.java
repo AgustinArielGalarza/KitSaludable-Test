@@ -29,8 +29,13 @@ public class controlador extends HttpServlet {
         }catch(Exception e){
             e.printStackTrace();
         }
-        
-    
+         }
+         String calorias = request.getParameter("select");
+         String boton2 = request.getParameter("boton2");
+         if(boton2 != null){
+             int cal = (int)Integer.parseInt(calorias);
+             request.setAttribute("calorias", cal);
+             request.getRequestDispatcher("alimentos.jsp").forward(request, response);
          }
         
         
