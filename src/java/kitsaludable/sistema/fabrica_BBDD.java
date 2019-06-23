@@ -45,8 +45,6 @@ public class fabrica_BBDD {
             
             alm.add(temp_alm);
         }
-        miConexion.close();
-        miResultSet.close();
         
         return alm;
     }

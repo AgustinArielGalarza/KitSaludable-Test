@@ -67,28 +67,25 @@ public final class alimentos_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        </header>\n");
       out.write("        \n");
       out.write("        \n");
-      out.write("        <form class=\"container\" name=\"opcion\" action=\"controlador\" method=\"post\"  >\n");
-      out.write("            <select  name=\"opcion\">\n");
-      out.write("                <option value =\"\" disable selected>--Seleccione una Dieta--</option>\n");
-      out.write("                <option value =\"dieta proteica\">dieta proteica</option>\n");
-      out.write("                <option value =\"dieta de harinas\">dieta de harinas</option>\n");
-      out.write("                <option value =\"dieta del limon\">dieta del limon</option>\n");
-      out.write("                <option value =\"Azucares\">Azucares</option>\n");
-      out.write("                <option value =\"Vegetariana\">Vegetariana</option>\n");
+      out.write("        <form class=\"container\" name=\"menu\" action=\"controlador\" method=\"post\"  >\n");
+      out.write("            <select name=\"\" >\n");
+      out.write("                <option name=\"\" value =\"\" disable selected>--Seleccione una Dieta--</option>\n");
+      out.write("                <option name=\"opcion\" value =\"dieta proteica\">dieta proteica</option>\n");
+      out.write("                <option name=\"opcion\" value =\"dieta de harinas\">dieta de harinas</option>\n");
+      out.write("                <option name=\"opcion\" value =\"dieta del limon\">dieta del limon</option>\n");
+      out.write("                <option name=\"opcion\" value =\"Azucares\">Azucares</option>\n");
+      out.write("                <option name=\"opcion\" value =\"Vegetariana\">Vegetariana</option>\n");
       out.write("            </select>\n");
       out.write("             <input  name=\"boton\" type=\"submit\" value=\"Enviar\"/>\n");
       out.write("        </form>\n");
       out.write("        ");
  
-        HttpSession sesion = request.getSession();
-        List<alimentos> ld;
-        if(request.getAttribute("Lista dietas")!= null){
-            ld = (List<alimentos>)request.getAttribute("Lista dietas");
-            response.sendRedirect("lista.jsp");
-        }
+        List<alimentos> al = (List < alimentos >) request.getAttribute("lista dietas");
         
-        
-        
+      out.write("\n");
+      out.write("        \n");
+      out.write("        ");
+      out.print( al);
       out.write("\n");
       out.write("        \n");
       out.write("        <div class =\"container\">\n");

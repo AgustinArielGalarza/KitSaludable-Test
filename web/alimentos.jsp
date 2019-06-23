@@ -26,27 +26,22 @@
         </header>
         
         
-        <form class="container" name="opcion" action="controlador" method="post"  >
-            <select  name="opcion">
-                <option value ="" disable selected>--Seleccione una Dieta--</option>
-                <option value ="dieta proteica">dieta proteica</option>
-                <option value ="dieta de harinas">dieta de harinas</option>
-                <option value ="dieta del limon">dieta del limon</option>
-                <option value ="Azucares">Azucares</option>
-                <option value ="Vegetariana">Vegetariana</option>
+        <form class="container" name="menu" action="controlador" method="post"  >
+            <select name="" >
+                <option name="" value ="" disable selected>--Seleccione una Dieta--</option>
+                <option name="opcion" value ="dieta proteica">dieta proteica</option>
+                <option name="opcion" value ="dieta de harinas">dieta de harinas</option>
+                <option name="opcion" value ="dieta del limon">dieta del limon</option>
+                <option name="opcion" value ="Azucares">Azucares</option>
+                <option name="opcion" value ="Vegetariana">Vegetariana</option>
             </select>
              <input  name="boton" type="submit" value="Enviar"/>
         </form>
         <% 
-        HttpSession sesion = request.getSession();
-        List<alimentos> ld;
-        if(request.getAttribute("Lista dietas")!= null){
-            ld = (List<alimentos>)request.getAttribute("Lista dietas");
-            response.sendRedirect("lista.jsp");
-        }
-        
-        
+        List<alimentos> al = (List < alimentos >) request.getAttribute("lista dietas");
         %>
+        
+        <%= al%>
         
         <div class ="container">
             <h3>Lista de alimentos de la dieta seleccionada</h3>

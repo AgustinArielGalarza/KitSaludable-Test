@@ -14,24 +14,19 @@ public class controlador extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, Exception {
         
-        String dieta;
+        String dieta= request.getParameter("opcion");
         fabrica_BBDD fb = new fabrica_BBDD();
         List<alimentos> alimentos_delControlador;
-        RequestDispatcher rd = null;
         
-        if(request.getParameter("boton")!= null){
-            dieta = request.getParameter("opcion");
-            alimentos_delControlador = fb.getAlimentos(dieta);
+            alimentos_delControlador =  fb.getAlimentos(dieta);
             
             request.setAttribute("lista dietas", alimentos_delControlador);
-            rd= request.getRequestDispatcher("/alimentos.jsp");
-        }
-        
-        rd.forward(request, response);
-        
+            request.getRequestDispatcher("/listas.jsp").forward(request, response);
+       
         
         
     }
+    
 }
     /*
     private fabrica_BBDD fabricaAlimentos;
